@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/djoepramono/falidator-sample#readme",
   "dependencies": {
-    "@codeallnight/falidator": "^0.0.3"
+    "@codeallnight/falidator": "0.0.5"
+  },
+  "devDependencies": {
+    "typescript": "^3.5.3"
   }
 }
