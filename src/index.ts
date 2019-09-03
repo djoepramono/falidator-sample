@@ -1,15 +1,28 @@
-import { Validate, runValidations } from "@codeallnight/falidator"
+import { runAsyncValidations, AsyncValidate } from "@codeallnight/falidator";
+import { Invalid, InvalidOr } from "@codeallnight/falidator/dist/models"
 
 interface Person {
     name: string;
     age: number;
 }
 
-const overEighteen: Validate<Person> = (person: Person) => {
-    return (person.age > 18) ? person : { errorMessage: "Not over 18"}
+const isAllowed = async (person: Person): Promise<InvalidOr<Person>> => {
+    const allowed = (person.name === 'Banned') ? new Invalid("Must not be in the banned list") : person;
+    return allowed;
+};
+
+const eighteenOrAbove: AsyncValidate<Person> = async (person: Person) => {
+    return (person.age >= 18) ? person : new Invalid("Must be 18 or above");
 }
 
-const joe: Person = { name: "Joe", age: 24 }
+const nonEmptyName: AsyncValidate<Person> = async (person: Person) => {
+    return  (person.name !== "") ? person : new Invalid('Name cannot be empty')
+}
 
-const result = runValidations([overEighteen], joe);
-console.log(result);
+const joe: Person = { name: "Banned", age: 4 }
+
+runAsyncValidations<Person>([
+    eighteenOrAbove,
+    nonEmptyName,
+    isAllowed,
+], joe).then((x: any) => x.map((y:any) => console.log(y.errorMessage))).catch((error: Error) => console.error(error));

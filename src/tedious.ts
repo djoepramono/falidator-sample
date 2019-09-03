@@ -14,7 +14,7 @@ const validatePerson = async (person: Person) => {
     }
 
     if (person.name === '') {
-        throw new Error("First name cannot be empty")
+        throw new Error("Name cannot be empty")
     }
 
     const allowed = await isAllowed(person)
