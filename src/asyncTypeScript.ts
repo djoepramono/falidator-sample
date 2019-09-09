@@ -26,10 +26,10 @@ const validatePerson = async (person: Person) => {
 };
 
 const joe: Person = { name: "Joe", age: 24 }
-console.log(validatePerson(joe));
+validatePerson(joe).then(console.log).catch(console.error);
 
-// const jack: Person = { name: "Jack", age: 14 }
-// console.log(validatePerson(jack));
+const jack: Person = { name: "Jack", age: 14 }
+validatePerson(jack).then(console.log).catch(console.error);
 
 const banned: Person = { name: "Banned", age: 34 }
-console.log(validatePerson(banned));
+validatePerson(banned).then(console.log).catch(console.error);
