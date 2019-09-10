@@ -4,7 +4,8 @@
   "description": "Sample usages of Falidator",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rm dist/* & npx tsc"
   },
   "repository": {
     "type": "git",
