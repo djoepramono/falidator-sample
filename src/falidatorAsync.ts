@@ -21,8 +21,8 @@ const nonEmptyName: AsyncValidate<Person> = async (person: Person) => {
 
 const joe: Person = { name: "Banned", age: 4 }
 
-runAsyncValidations<Person>([
-    eighteenOrAbove,
-    nonEmptyName,
-    isAllowed,
-], joe).then((x: any) => x.map((y:any) => console.log(y.errorMessage))).catch((error: Error) => console.error(error));
+const result = runAsyncValidations<Person>([eighteenOrAbove, nonEmptyName, isAllowed], joe)
+    .then(console.log)
+    .catch(console.error);
+
+console.log(runAsyncValidations<Person>([eighteenOrAbove, nonEmptyName, isAllowed], joe));
