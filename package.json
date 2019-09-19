@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rm dist/* & npx tsc"
+    "build": "rm dist/* & npx tsc",
+    "marp:server": "npx @marp-team/marp-cli -s ./docs"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
     "@codeallnight/falidator": "0.0.11"
   },
   "devDependencies": {
+    "@marp-team/marp-cli": "^0.14.1",
     "typescript": "^3.6.3"
   }
 }
