@@ -6,5 +6,5 @@ const myOtherInvalid: Invalid = new Invalid("Not valid");
 
 console.log(isInvalid(myInvalid));                  // true
 console.log(isInvalid(myOtherInvalid));             // true
-console.log(myInvalid instanceof Invalid);          // true
-console.log(myOtherInvalid instanceof Invalid);     // false
+console.log(myInvalid instanceof Invalid);          // false
+console.log(myOtherInvalid instanceof Invalid);     // true
