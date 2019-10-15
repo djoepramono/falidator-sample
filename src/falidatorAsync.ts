@@ -12,11 +12,15 @@ const isAllowed = async (person: Person): Promise<InvalidOr<Person>> => {
 };
 
 const eighteenOrAbove: AsyncValidate<Person> = async (person: Person) => {
-    return (person.age >= 18) ? person : new Invalid("Must be 18 or above");
+    if (person.age >= 18) {
+        return person
+     } else {
+        throw Error("Must be 18 or above");
+     } 
 }
 
 const nonEmptyName: AsyncValidate<Person> = async (person: Person) => {
-    return  (person.name !== "") ? person : new Invalid('Name cannot be empty')
+    return  (person.name !== "") ? person : Promise.reject('Name cannot be empty')
 }
 
 const joe: Person = { name: "Banned", age: 4 }
@@ -24,5 +28,3 @@ const joe: Person = { name: "Banned", age: 4 }
 const result = runAsyncValidations<Person>([eighteenOrAbove, nonEmptyName, isAllowed], joe)
     .then(console.log)
     .catch(console.error);
-
-console.log(runAsyncValidations<Person>([eighteenOrAbove, nonEmptyName, isAllowed], joe));
