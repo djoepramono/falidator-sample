@@ -19,10 +19,10 @@
   },
   "homepage": "https://github.com/djoepramono/falidator-sample#readme",
   "dependencies": {
-    "@codeallnight/falidator": "^0.1.0"
+    "@codeallnight/falidator": "^0.1.2"
   },
   "devDependencies": {
     "@marp-team/marp-cli": "^0.14.1",
-    "typescript": "^3.6.3"
+    "typescript": "^3.7.2"
   }
 }
