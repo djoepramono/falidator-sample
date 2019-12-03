@@ -22,7 +22,7 @@
     "@codeallnight/falidator": "^0.1.4"
   },
   "devDependencies": {
-    "@marp-team/marp-cli": "^0.14.1",
+    "@marp-team/marp-cli": "^0.16.2",
     "typescript": "^3.7.2"
   }
 }
