@@ -1,5 +1,4 @@
-import { Invalid } from "@codeallnight/falidator/dist/models";
-import { isInvalid } from "@codeallnight/falidator/dist/typeGuards";
+import { Invalid, isInvalid } from "@codeallnight/falidator";
 
 const myInvalid: Invalid = { errorMessage:"Ooops"};
 const myOtherInvalid: Invalid = new Invalid("Not valid");

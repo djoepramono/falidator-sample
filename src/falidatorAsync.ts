@@ -1,5 +1,4 @@
-import { runAsyncValidations, AsyncValidate } from "@codeallnight/falidator";
-import { Invalid, InvalidOr } from "@codeallnight/falidator/dist/models"
+import { runAsyncValidations, AsyncValidate, InvalidOr, Invalid } from "@codeallnight/falidator";
 
 interface Person {
     name: string;

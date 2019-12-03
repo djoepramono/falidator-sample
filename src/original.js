@@ -1,9 +1,9 @@
-const isAllowed = async (person) => {
+const isAllowedA = async (person) => {
     const allowed = (person.name === 'Banned') ? false : true;
     return allowed;
 };
 
-const validatePerson = async (person) => {
+const validatePersonA = async (person) => {
     if (person.age < 18) {
         throw new Error("Must be 18 or above")
     }
@@ -20,11 +20,11 @@ const validatePerson = async (person) => {
     return person;
 };
 
-const joe = { name: "Joe", age: 24 }
+const joeA = { name: "Joe", age: 24 }
 validatePerson(joe).then(console.log).catch(console.error);
 
-const jack = { name: "Jack", age: 14 }
+const jackA = { name: "Jack", age: 14 }
 validatePerson(jack).then(console.log).catch(console.error);
 
-const banned = { name: "Banned", age: 34 }
+const bannedA = { name: "Banned", age: 34 }
 validatePerson(banned).then(console.log).catch(console.error);

@@ -1,5 +1,4 @@
-import { runValidations, Validate } from "@codeallnight/falidator";
-import { Invalid, InvalidOr } from "@codeallnight/falidator/dist/models";
+import { runValidations, Validate, Invalid, InvalidOr } from "@codeallnight/falidator";
 
 const eighteenOrAbove: Validate<Person> = (person) => {
     return (person.age >= 18) ? person : new Invalid("Must be 18 or above");
